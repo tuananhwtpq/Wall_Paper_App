@@ -15,4 +15,13 @@ class CollectionRepository(private val apiService: PostApiService) {
         }
     }
 
+    suspend fun getPrivateCollections(id: String) : Result<List<CollectionResponse>>{
+        return try {
+            val collections = apiService.getPrivateCollections(id)
+            Result.success(collections)
+        } catch (e: Exception){
+            Result.failure(e)
+        }
+    }
+
 }

@@ -8,5 +8,29 @@
         android:id="@+id/mainFragment"
         android:name="com.example.unsplash_app.ui.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_homeItemDetailFragment2"
+            app:destination="@id/homeItemDetailFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeItemDetailFragment2"
+        android:name="com.example.unsplash_app.ui.home_item_detail.HomeItemDetailFragment"
+        android:label="fragment_home_item_detail"
+        tools:layout="@layout/fragment_home_item_detail">
+        <action
+            android:id="@+id/action_homeItemDetailFragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
 </navigation>

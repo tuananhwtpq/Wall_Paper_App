@@ -82,13 +82,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
 
         homeAdapter.setOnClickItem { item, position ->
-            showToast("Item ${item?.user?.username} $position clicked")
+            //showToast("Item ${item?.user?.username} $position clicked")
 
             val bundle = bundleOf(
-                "username" to item?.user?.username
+                "username" to item?.user?.username,
+                "id" to item?.id
             )
-            safeNavigate(R.id.action_homeFragment_to_homeItemDetailFragment, bundle)
-            showToast("Di chuyen thanh cong qua Home Item Detail")
+            safeNavigate(R.id.action_mainFragment_to_homeItemDetailFragment2, bundle)
+            //showToast("Di chuyen thanh cong qua Home Item Detail")
         }
     }
 

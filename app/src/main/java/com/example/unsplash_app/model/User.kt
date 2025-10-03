@@ -46,5 +46,12 @@ data class User (
     @SerializedName("total_photos")
     val total_photos: Int,
 
+    @SerializedName("downloads")
+    val downloads: Int,
+
+    @SerializedName("social")
+    val social: Social?,
+
+
 
 )

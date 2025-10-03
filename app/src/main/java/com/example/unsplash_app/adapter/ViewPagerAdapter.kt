@@ -16,30 +16,40 @@ class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     private val fragmentList = mutableMapOf<Int, Fragment?>()
 
     override fun createFragment(position: Int): Fragment {
-        if (fragmentList[position] != null) {
-            return fragmentList[position]!!
-        }
+//        if (fragmentList[position] != null) {
+//            return fragmentList[position]!!
+//        }
+//
+//        val bundle = bundleOf(MainFragment.TAB_KEY to position)
+//        when (TabInfo.getTabByPosition(position)) {
+//            TabInfo.TabHome -> {
+//                if (fragmentList[position] == null) {
+//                    fragmentList[position] = HomeFragment().apply {
+//                        arguments = bundle
+//                    }
+//                }
+//            }
+//
+//            TabInfo.TabCollection -> {
+//                if (fragmentList[position] == null) {
+//                    fragmentList[position] = CollectionsFragment().apply {
+//                        arguments = bundle
+//                    }
+//                }
+//            }
+//        }
+//
+//        return fragmentList[position]!!
 
-        val bundle = bundleOf(MainFragment.TAB_KEY to position)
-        when (TabInfo.getTabByPosition(position)) {
+        return when (TabInfo.getTabByPosition(position)) {
             TabInfo.TabHome -> {
-                if (fragmentList[position] == null) {
-                    fragmentList[position] = HomeFragment().apply {
-                        arguments = bundle
-                    }
-                }
+                HomeFragment()
             }
 
             TabInfo.TabCollection -> {
-                if (fragmentList[position] == null) {
-                    fragmentList[position] = CollectionsFragment().apply {
-                        arguments = bundle
-                    }
-                }
+                CollectionsFragment()
             }
         }
-
-        return fragmentList[position]!!
     }
 
     override fun getItemCount(): Int {

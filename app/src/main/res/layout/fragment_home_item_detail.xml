@@ -36,6 +36,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/backBtn" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAddress"
+        app:layout_constraintBottom_toBottomOf="@id/iv_user_image"
+        tools:text="HAHAHAHHAHAA"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginStart="12dp"
+        android:drawableStart="@drawable/baseline_arrow_back_241"
+        android:drawablePadding="10dp"/>
+
+
     <ImageView
         android:id="@+id/btnShare"
         android:layout_width="wrap_content"
@@ -247,7 +262,7 @@
                 android:id="@+id/total_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="694,1K" />
+                android:text="0" />
 
         </LinearLayout>
 
@@ -261,7 +276,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Views"
+                android:text="Downloads"
                 android:textStyle="bold" />
 
             <TextView
@@ -282,7 +297,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Views"
+                android:text="Likes"
                 android:textStyle="bold" />
 
             <TextView
