@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.unsplash_app.R
 import com.example.unsplash_app.adapter.HomeAdapter
@@ -17,6 +18,7 @@ import com.example.unsplash_app.repository.HomeRepository
 import com.example.unsplash_app.state.UiState
 import com.example.unsplash_app.utils.ex.launchOnStarted
 import com.example.unsplash_app.utils.ex.safeNavigate
+import com.example.unsplash_app.utils.ex.showToast
 import com.example.unsplash_app.viewmodel.HomeViewModel
 import com.example.unsplash_app.viewmodel.HomeViewModelFactory
 
@@ -80,11 +82,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
 
         homeAdapter.setOnClickItem { item, position ->
-            Toast.makeText(requireContext(), "Item ${item?.user?.username} $position clicked", Toast.LENGTH_SHORT).show()
+            showToast("Item ${item?.user?.username} $position clicked")
+
             val bundle = bundleOf(
                 "username" to item?.user?.username
             )
             safeNavigate(R.id.action_homeFragment_to_homeItemDetailFragment, bundle)
+            showToast("Di chuyen thanh cong qua Home Item Detail")
         }
     }
 

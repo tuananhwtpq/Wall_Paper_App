@@ -31,7 +31,8 @@
         tools:layout="@layout/fragment_home_item_detail" >
 
         <argument android:name="username"
-            app:argType="string"/>
+            app:argType="string"
+            app:nullable="true"/>
 
     </fragment>
 </navigation>
